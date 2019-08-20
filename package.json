@@ -15,14 +15,16 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "prettier": "prettier --write src/**",
+    "build": "stencil build --docs && npm run prettier",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
     "ammo.js": "github:kripken/ammo.js",
-    "earcut": "latest"
+    "earcut": "latest",
+    "pepjs": "latest"
   },
   "devDependencies": {
     "@babylonjs/core": "preview",
@@ -30,6 +32,7 @@
     "@babylonjs/loaders": "preview",
     "@babylonjs/materials": "preview",
     "@stencil/core": "next",
+    "prettier": "latest",
     "rollup-plugin-node-polyfills": "latest"
   },
   "license": "MIT"
