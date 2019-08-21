@@ -19,7 +19,8 @@
     "build": "stencil build --docs && npm run prettier",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
   },
   "dependencies": {
     "ammo.js": "github:kripken/ammo.js",
