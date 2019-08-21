@@ -34,7 +34,8 @@
     "@babylonjs/materials": "preview",
     "@stencil/core": "next",
     "prettier": "latest",
-    "rollup-plugin-node-polyfills": "latest"
+    "rollup-plugin-node-polyfills": "latest",
+    "spectorjs": "latest"
   },
   "license": "MIT"
 }
