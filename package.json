@@ -23,17 +23,15 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
-  "dependencies": {
-    "ammo.js": "github:kripken/ammo.js",
-    "earcut": "latest",
-    "pepjs": "latest"
-  },
   "devDependencies": {
     "@babylonjs/core": "preview",
     "@babylonjs/inspector": "preview",
     "@babylonjs/loaders": "preview",
     "@babylonjs/materials": "preview",
     "@stencil/core": "next",
+    "ammo.js": "github:kripken/ammo.js",
+    "earcut": "latest",
+    "pepjs": "latest",
     "prettier": "latest",
     "rollup-plugin-node-polyfills": "latest",
     "spectorjs": "latest"
