@@ -15,6 +15,7 @@
     "loader/"
   ],
   "scripts": {
+    "name": "",
     "prettier": "prettier --write src/**",
     "build": "stencil build --docs && npm run prettier",
     "start": "stencil build --dev --watch --serve",
