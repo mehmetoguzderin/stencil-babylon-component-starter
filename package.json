@@ -17,7 +17,7 @@
   "scripts": {
     "name": "",
     "lint": "",
-    "prettier": "prettier --write src/**",
+    "prettier": "prettier --write src/** && eslint --fix",
     "build": "stencil build --docs && npm run prettier",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
@@ -32,6 +32,7 @@
     "@stencil/core": "next",
     "ammo.js": "github:kripken/ammo.js",
     "earcut": "latest",
+    "eslint": "latest",
     "pepjs": "latest",
     "prettier": "latest",
     "rollup-plugin-node-polyfills": "latest",
