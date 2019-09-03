@@ -30,13 +30,18 @@
     "@babylonjs/loaders": "preview",
     "@babylonjs/materials": "preview",
     "@stencil/core": "next",
+    "@stencil/redux": "latest",
     "ammo.js": "github:kripken/ammo.js",
     "earcut": "latest",
     "eslint": "latest",
     "pepjs": "latest",
     "prettier": "latest",
+    "redux": "latest",
     "rollup-plugin-node-polyfills": "latest",
     "spectorjs": "latest"
+  },
+  "peerDependencies": {,
+    "redux": "latest"
   },
   "license": "MIT"
 }
