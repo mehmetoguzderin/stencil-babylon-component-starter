@@ -40,7 +40,7 @@
     "rollup-plugin-node-polyfills": "latest",
     "spectorjs": "latest"
   },
-  "peerDependencies": {,
+  "peerDependencies": {
     "redux": "latest"
   },
   "license": "MIT"
