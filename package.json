@@ -15,14 +15,14 @@
     "loader/"
   ],
   "scripts": {
-    "name": "",
-    "lint": "",
-    "prettier": "prettier --write src/** && eslint --fix",
     "build": "stencil build --docs && npm run prettier",
+    "generate": "stencil generate",
+    "lint": "",
+    "name": "",
+    "prettier": "prettier --write src/**",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
     "@babylonjs/core": "preview",
