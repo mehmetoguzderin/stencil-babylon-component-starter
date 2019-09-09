@@ -9,17 +9,9 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
   interface MyComponent {
     /**
-     * The first name
+     * The clear color
      */
-    first: string;
-    /**
-     * The last name
-     */
-    last: string;
-    /**
-     * The middle name
-     */
-    middle: string;
+    clearColor: string;
   }
 }
 
@@ -39,17 +31,9 @@ declare global {
 declare namespace LocalJSX {
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
-     * The first name
+     * The clear color
      */
-    first?: string;
-    /**
-     * The last name
-     */
-    last?: string;
-    /**
-     * The middle name
-     */
-    middle?: string;
+    clearColor?: string;
   }
 
   interface IntrinsicElements {

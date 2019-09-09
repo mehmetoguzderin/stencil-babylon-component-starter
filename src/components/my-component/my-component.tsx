@@ -1,7 +1,19 @@
-import { Engine } from "@babylonjs/core";
-import { Component, Prop, h } from "@stencil/core";
+import "@babylonjs/core/Animations/animatable";
+import "@babylonjs/core/Audio/audioEngine";
+import "@babylonjs/core/Audio/audioSceneComponent";
+import "@babylonjs/core/Culling/ray";
+import "@babylonjs/core/Debug/debugLayer";
+import "@babylonjs/core/Helpers/sceneHelpers";
+import "@babylonjs/core/Meshes/meshBuilder";
+import "@babylonjs/core/Physics/physicsEngineComponent";
+import "@babylonjs/inspector";
+import "@babylonjs/loaders/glTF";
+import "pepjs";
 
-import { format } from "../../utils/utils";
+import { Color4, Engine, Scene } from "@babylonjs/core";
+import { Component, h, Prop } from "@stencil/core";
+
+import SPECTOR from "spectorjs";
 
 @Component({
   tag: "my-component",
@@ -10,43 +22,35 @@ import { format } from "../../utils/utils";
 })
 export class MyComponent {
   /**
-   * The first name
+   * The clear color
    */
-  @Prop() first: string;
-
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
-
-  /**
-   * The last name
-   */
-  @Prop() last: string;
+  @Prop() clearColor: string;
 
   private canvas?: HTMLCanvasElement;
 
-  private getText(): string {
-    return format(this.first, this.middle, this.last);
-  }
-
   componentDidRender() {
-    new Engine(this.canvas, true, {
+    let spector = new SPECTOR.Spector();
+    spector.displayUI(true);
+    spector.getCaptureUI().updateCanvasesList([this.canvas]);
+
+    let engine = new Engine(this.canvas, true, {
       deterministicLockstep: true,
       lockstepMaxSteps: 32,
       preserveDrawingBuffer: true,
       stencil: true
     });
+
+    let scene = new Scene(engine);
+    scene.clearColor = Color4.FromHexString(this.clearColor);
+
+    scene.render();
   }
 
   render() {
     return (
-      <div>
-        <div>Hello, World! I'm {this.getText()}</div>
-        <canvas
-          ref={(canvas: HTMLCanvasElement) => (this.canvas = canvas)}
-        ></canvas>
-      </div>
+      <canvas
+        ref={(canvas: HTMLCanvasElement) => (this.canvas = canvas)}
+      ></canvas>
     );
   }
 }

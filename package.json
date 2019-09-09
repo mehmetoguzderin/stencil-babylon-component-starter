@@ -15,14 +15,14 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs && npm run prettier",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=4096 stencil build --docs && npm run prettier",
     "generate": "stencil generate",
     "lint": "",
     "name": "",
     "prettier": "prettier --write src/**",
-    "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "start": "cross-env NODE_OPTIONS=--max-old-space-size=4096 stencil build --dev --watch --serve",
+    "test": "cross-env NODE_OPTIONS=--max-old-space-size=4096 stencil test --spec --e2e",
+    "test.watch": "cross-env NODE_OPTIONS=--max-old-space-size=4096 stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
     "@babylonjs/core": "preview",
@@ -31,16 +31,23 @@
     "@babylonjs/materials": "preview",
     "@stencil/core": "next",
     "@stencil/redux": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "ammo.js": "github:kripken/ammo.js",
+    "cross-env": "latest",
     "earcut": "latest",
     "eslint": "latest",
     "pepjs": "latest",
     "prettier": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "redux": "latest",
     "rollup-plugin-node-polyfills": "latest",
-    "spectorjs": "latest"
+    "spectorjs": "github:BabylonJS/Spector.js"
   },
   "peerDependencies": {
+    "react": "latest",
+    "react-dom": "latest",
     "redux": "latest"
   },
   "license": "MIT"
