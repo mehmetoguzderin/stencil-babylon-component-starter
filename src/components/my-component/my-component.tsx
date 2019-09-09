@@ -1,4 +1,6 @@
+import { Engine } from "@babylonjs/core";
 import { Component, Prop, h } from "@stencil/core";
+
 import { format } from "../../utils/utils";
 
 @Component({
@@ -22,11 +24,29 @@ export class MyComponent {
    */
   @Prop() last: string;
 
+  private canvas?: HTMLCanvasElement;
+
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }
 
+  componentDidRender() {
+    new Engine(this.canvas, true, {
+      deterministicLockstep: true,
+      lockstepMaxSteps: 32,
+      preserveDrawingBuffer: true,
+      stencil: true
+    });
+  }
+
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return (
+      <div>
+        <div>Hello, World! I'm {this.getText()}</div>
+        <canvas
+          ref={(canvas: HTMLCanvasElement) => (this.canvas = canvas)}
+        ></canvas>
+      </div>
+    );
   }
 }
